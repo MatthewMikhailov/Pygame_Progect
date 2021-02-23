@@ -1,8 +1,10 @@
 import pygame
 from settings import *
 from map import world_map, WORLD_WIDTH, WORLD_HEIGHT
+from numba import njit
 
 
+@njit(fastmath=True, cache=True)
 def mapping(a, b):
     return (a // TILE) * TILE, (b // TILE) * TILE
 
