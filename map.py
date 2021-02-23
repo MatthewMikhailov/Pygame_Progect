@@ -22,7 +22,6 @@ for j, row in enumerate(text_map):
         if char == "K":
             sprites_map.append(('K', i + 0.5, j + 0.5))
             sprites_mini_map.add((i * MAP_TILE, j * MAP_TILE))
-            print('ok')
         elif char != "_":
             mini_map.add((i * MAP_TILE, j * MAP_TILE))
             collision_walls.append(pygame.Rect(i * TILE, j * TILE, TILE, TILE))
