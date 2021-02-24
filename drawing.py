@@ -45,6 +45,9 @@ class Drawing:
         pygame.draw.circle(self.sc_map, RED, (int(map_x), int(map_y)), 5)
         for x, y in mini_map:
             pygame.draw.rect(self.sc_map, GREEN, (x, y, MAP_TILE, MAP_TILE))
-        for x, y in sprites_mini_map:
-            pygame.draw.circle(self.sc_map, YELLOW, (x + 5, y + 5), 4)
+        for i, x, y in sprites_mini_map:
+            if i == 'K':
+                pygame.draw.circle(self.sc_map, YELLOW, (x + 5, y + 5), 4)
+            if i == 'B':
+                pygame.draw.circle(self.sc_map, DARKGRAY, (x + 5, y + 5), 4)
         self.sc.blit(self.sc_map, MAP_POS)

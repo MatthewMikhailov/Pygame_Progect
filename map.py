@@ -21,7 +21,10 @@ for j, row in enumerate(text_map):
     for i, char in enumerate(row):
         if char == "K":
             sprites_map.append(('K', i + 0.5, j + 0.5))
-            sprites_mini_map.add((i * MAP_TILE, j * MAP_TILE))
+            sprites_mini_map.add(('K', i * MAP_TILE, j * MAP_TILE))
+        if char == "B":
+            sprites_map.append(('B', i + 0.5, j + 0.5))
+            sprites_mini_map.add(('B', i * MAP_TILE, j * MAP_TILE))
         elif char != "_":
             mini_map.add((i * MAP_TILE, j * MAP_TILE))
             collision_walls.append(pygame.Rect(i * TILE, j * TILE, TILE, TILE))

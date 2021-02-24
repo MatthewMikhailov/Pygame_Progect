@@ -6,7 +6,8 @@ from map import sprites_map
 class Sprites:
     def __init__(self):
         self.sprite_types = {
-            'key': pygame.image.load('sprites/key.png').convert_alpha()
+            'key': pygame.image.load('sprites/key.png').convert_alpha(),
+            'barrel': pygame.image.load('sprites/barrel.png').convert_alpha()
         }
         self.list_of_objects = []
         if len(sprites_map) > 0:
@@ -14,6 +15,9 @@ class Sprites:
                 if i[0] == "K":
                     self.list_of_objects.append(
                         SpriteObject(self.sprite_types['key'], True, (i[1], i[2]), 1.8, 0.4))
+                if i[0] == "B":
+                    self.list_of_objects.append(
+                        SpriteObject(self.sprite_types['barrel'], True, (i[1], i[2]), 1.8, 0.4))
 
 
 class SpriteObject:
