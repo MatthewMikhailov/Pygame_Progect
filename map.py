@@ -1,5 +1,6 @@
 import pygame
 from settings import *
+import random
 
 sprites_map = []
 name_map = maps[1]
@@ -22,8 +23,8 @@ for j, row in enumerate(text_map):
         if char == "K":
             sprites_map.append(('K', i + 0.5, j + 0.5))
             sprites_mini_map.add(('K', i * MAP_TILE, j * MAP_TILE))
-        if char == "B":
-            sprites_map.append(('B', i + 0.5, j + 0.5))
+        elif char == "B":
+            sprites_map.append(('B', i + random.uniform(0, 0.8), j + random.uniform(0, 0.8)))
             sprites_mini_map.add(('B', i * MAP_TILE, j * MAP_TILE))
         elif char != "_":
             mini_map.add((i * MAP_TILE, j * MAP_TILE))
